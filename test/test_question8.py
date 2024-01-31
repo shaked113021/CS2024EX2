@@ -37,6 +37,14 @@ class EfficientMergeTests(TestCase):
         result = question8.merge_efficient(list_a, list_b)
         self.assertListEqual(expected, result)
 
+    def test_CheckFirstArgIsNotList(self):
+        list_b = [1, 4, 8, 17]
+        self.assertRaises(TypeError, question8.merge_efficient, 9, list_b)
+
+    def test_CheckSecondArgIsNotList(self):
+        list_a = [1, 9 ,10 ,12]
+        self.assertRaises(TypeError, question8.merge_efficient, list_a, 9)
+
 
 if __name__ == '__main__':
     unittest.main()

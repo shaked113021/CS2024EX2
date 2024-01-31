@@ -17,6 +17,12 @@ class SelectionSortTests(TestCase):
         question6.selection_sort(to_sort)
         self.assertListEqual(expected, to_sort)
 
+    def test_CheckRepeatingValue(self):
+        to_sort = [2, 2, 5, 9, 8]
+        expected = [2, 2, 5, 8, 9]
+        question6.selection_sort(to_sort)
+        self.assertListEqual(expected, to_sort)
+
     def test_CheckSortedStrings(self):
         to_sort = ['a', 'b', 'c', 'd']
         expected = ['a', 'b', 'c', 'd']
