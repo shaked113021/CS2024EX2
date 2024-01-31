@@ -29,6 +29,9 @@ class SelectionSortTests(TestCase):
         question6.selection_sort(to_sort)
         self.assertListEqual(expected, to_sort)
 
+    def test_NotList(self):
+        self.assertRaises(TypeError, question6.selection_sort, 8)
+
 
 if __name__ == '__main__':
     unittest.main()
