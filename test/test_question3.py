@@ -31,3 +31,19 @@ class UpperTriangleTests(unittest.TestCase):
 
         self.assertRaises(ValueError, question3.print_upper_triangle, mat_input)
 
+    @patch('sys.stdout', new_callable=io.StringIO)
+    def test_CheckNotMatrix(self, fake_out=io.StringIO):
+        self.assertRaises(TypeError, question3.print_upper_triangle, 5)
+
+    @patch('sys.stdout', new_callable=io.StringIO)
+    def test_checkInnerNotMatrix(self, fake_out: io.StringIO):
+        mat_input = [
+            [1, 2, 3, 4, 5],
+            6,
+            [7, 8, 9, 10, 11]
+        ]
+        self.assertRaises(ValueError, question3.print_upper_triangle, mat_input)
+
+
+if __name__ == '__main__':
+    unittest.main()
